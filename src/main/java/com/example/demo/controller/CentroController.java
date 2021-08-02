@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/v1/centros")
@@ -18,5 +20,10 @@ public class CentroController {
     @GetMapping("/{id}/show")
     public ResponseEntity<CentroModel> getById(@PathVariable(name = "id") int id) {
         return new ResponseEntity<>(centroService.getById(id), HttpStatus.OK);
+    }
+
+    @GetMapping
+    public List<CentroModel> getAll() {
+        return centroService.getAll();
     }
 }
