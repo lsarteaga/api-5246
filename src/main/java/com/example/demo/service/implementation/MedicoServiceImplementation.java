@@ -22,6 +22,6 @@ public class MedicoServiceImplementation implements MedicoService {
 
     @Override
     public List<MedicoModel> getAll() {
-        return medicoRepository.findAll();
+        return medicoRepository.getEmpleadoByIdCentro();
     }
 }
